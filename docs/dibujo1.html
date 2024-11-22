@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casa basica</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            background-color: lawngreen;
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .techo {
+            --size: 20rem;
+            width: 0;
+            height: 0;
+            border-left: var(--size) solid transparent;
+            border-right: var(--size) solid transparent;
+            border-bottom: calc(var(--size) * 1.1) solid saddlebrown;
+        }
+
+        .casa {
+            background-color: rgb(129, 125, 125);
+            width: 30.0rem;
+            height: 30.0rem;
+        }
+
+        .ventana{
+            background-color:aquamarine;
+            width: 5rem;
+            height: 5rem;
+        }
+
+        .ventana1{
+            position: relative;
+            top: 5rem;
+            left: 20rem;
+        }
+
+        .ventana2{
+            position: relative;
+            left: 4rem;
+        }
+
+        .puerta{
+            background-color: saddlebrown;
+            height: 15rem;
+            width: 10rem;
+            position: relative;
+            top: 5rem;
+            left: 10rem;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+        .manija{
+            background-color: dimgray;
+            border-radius: 50%;
+            width: 2rem;
+            height: 2rem;
+            position: relative;
+            top: 7rem;
+            left: 7rem;
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <section class="techo">
+
+        </section>
+        <section class="casa">
+            <div class="ventana ventana1">
+            </div>
+            <div class="ventana ventana2">
+            </div>
+            <div class="puerta"> 
+                <div class="manija">
+
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
