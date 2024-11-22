@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flor</title>
+    <style>
+        body{width: 100vw;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(185, 222, 245);
+        }
+
+        html{
+            font-size: 62.5%;
+        }
+
+        h2{
+            margin-bottom: 9rem;
+        }
+        .flor{
+            width: 20rem;
+            height: 20rem;
+            border-radius: 50%;
+            background-color: rgb(255, 136, 0);
+            z-index: 1;
+        }
+
+        .petalo{
+            width: 8rem;
+            height: 8rem;
+            background-color: crimson;
+            border-radius: 100% 0% 100% 0% / 100% 0% 100% 0% ;
+            border: 1px solid black;
+            z-index: 3;
+        }
+
+        .container{
+            display: flex;
+            flex-direction: column;
+        }
+        .polen{
+            width: 12rem;
+            height: 12rem;
+            background-color: yellow;
+            border-radius: 50%;
+            position: relative;
+            top: -118.5rem;
+            left: 4rem;
+            transform: rotate(132deg);
+            z-index: 2;
+            box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        }
+
+        .tallo{
+            background-color: darkolivegreen;
+            width: 6rem;
+            height: 36rem;
+            position: absolute;
+            top: 36rem;
+            left: 65rem;
+            border-radius: 4rem;
+            box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+            border: 1px solid black;
+        }
+
+        .petalo1{
+            position: relative;
+            left: 13rem;
+        }
+        
+        .petalo2{
+            position: relative;
+            top: -5rem;
+            left: 15rem;
+            transform: rotate(24deg);
+        }
+
+        .petalo3{
+            position: relative;
+            top: -9rem;
+            left: 15rem;
+            transform: rotate(50deg);
+        }
+
+        .petalo4{
+            position: relative;
+            top: -13rem;
+            left: 14rem;
+            transform: rotate(80deg);
+        }
+
+        .petalo5{
+            position: relative;
+            top: -19rem;
+            left: 11rem;
+            transform: rotate(102deg);
+        }
+
+        .petalo6{
+            position: relative;
+            top: -26rem;
+            left: 7rem;
+            transform: rotate(127deg);
+        }
+
+        .petalo7{
+            position: relative;
+            top: -34rem;
+            left: 4rem;
+            transform: rotate(143deg);
+        }
+
+        .petalo8{
+            position: relative;
+            top: -43rem;
+            left: 1rem;
+            transform: rotate(157deg);
+        }
+
+        .petalo9{
+            position: relative;
+            top: -53.5rem;
+            left: -2.4rem;
+            transform: rotate(189deg);
+        }
+
+        .petalo10{
+            position: relative;
+            top: -65.3rem;
+            left: -3.7rem;
+            transform: rotate(36deg);
+        }
+
+        .petalo11{
+            position: relative;
+            top: -78rem;
+            left: -3.9rem;
+            transform: rotate(65deg);
+        }
+
+        .petalo12{
+            position: relative;
+            top: -90rem;
+            left: -1.7rem;
+            transform: rotate(95deg);
+        }
+
+        .petalo13{
+            position: relative;
+            top: -100.7rem;
+            left: 1.2rem;
+            transform: rotate(110deg);
+        }
+
+        .petalo14{
+            position: relative;
+            top: -109.9rem;
+            left: 4.9rem;
+            transform: rotate(132deg);
+        }
+
+        .petalo15{
+            position: relative;
+            top: -117.3rem;
+            left: 9.3rem;
+            transform: rotate(-20deg);
+        }
+
+        .hoja{
+            width: 8rem;
+            height: 8rem;
+            background-color: darkolivegreen;
+            border-radius: 100% 0% 100% 0% / 100% 0% 100% 0% ;
+            border: 1px solid black;
+            position: absolute;
+            top: 15rem;
+            left: 7rem;
+            transform: rotate(27deg);
+        }
+
+        .black{
+            background-color: rgb(97, 60, 18);
+            height: 11rem;
+            width: 0.2rem;
+            position: absolute;
+            left: 2.3rem;
+            transform: rotate(222deg);
+        }
+       
+    </style>
+</head>
+<body>
+    <main class="container">
+        <h2>Para ti con cariño 🤗  de Alejandro</h2>
+        <section class="flor">
+           <div class="petalo petalo1"></div>
+           <div class="petalo petalo2"></div>
+           <div class="petalo petalo3"></div>
+           <div class="petalo petalo4"></div>
+           <div class="petalo petalo5"></div>
+           <div class="petalo petalo6"></div>
+           <div class="petalo petalo7"></div>
+           <div class="petalo petalo8"></div>
+           <div class="petalo petalo9"></div>
+           <div class="petalo petalo10"></div>
+           <div class="petalo petalo11"></div>
+           <div class="petalo petalo12"></div>
+           <div class="petalo petalo13"></div>
+           <div class="petalo petalo14"></div>
+           <div class="petalo petalo15"></div>
+           <div class="polen"></div>
+        </section>
+        <section class="tallo">
+            <div class="hoja">
+                <div class="black"></div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
