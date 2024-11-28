@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YardSale</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="./assets/logos/favicon_yard_sale.svg" type="image/x-icon">
+    <style>
+        :root {
+            --very-light-pink: #C7C7C7;
+            --White: #FFFFFF;
+            --text-input-field: #F7F7F7;
+            --black: #000000;
+            --hospital-green: #ACD9B2;
+            --sm: 1.4rem;
+            --md: 1.6rem;
+            --lg: 1.8rem;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            font-family: "Quicksand", sans-serif;
+        }
+
+        .primary-button {
+            background-color: var(--hospital-green);
+            border-radius: .8rem;
+            border: none;
+            color: var(--White);
+            width: 100%;
+            cursor: pointer;
+            font-size: var(--md);
+            font-weight: bold;
+            height: 5rem;
+        }
+
+        .product-detail{
+            width: 30rem;
+            padding-bottom: 2.4rem;
+            position: absolute;
+            right: 0;
+            border: .1rem solid var(--hospital-green);
+            border-radius: 2rem;
+            overflow: hidden;
+        }
+
+        
+        .my-order{
+            width: 100%;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+
+        .title{
+            font-size: var(--lg);
+            font-weight: bold;
+            margin-left: 1.8rem;
+        }
+
+        .my-order-container{
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            width: 300px;
+        }
+        
+        .my-order-content{
+            display: flex;
+            flex-direction: column;
+            font-size: var(--sm);
+            padding: 1.2rem;
+        }
+
+        .order{
+            background-color: var(--text-input-field);
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 16px;
+            align-items: center;
+            margin-bottom: 2.4rem;
+            border-radius: .8rem;
+            padding: 1.2rem 2.4rem;
+        }
+
+        .order p:nth-child(1){
+            display: flex;
+            flex-direction: column;
+        }
+
+        .order p:nth-child(2){
+            justify-self: flex-end;
+        }
+
+        .order p span:nth-child(1){
+            font-size: var(--md);
+            font-weight: bold;
+        }
+
+        .title-container{
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: 1.6rem;
+        }
+
+        .title-container img{
+            transform: rotate(180deg);
+        }
+
+        .shopping-cart{
+            display: grid;
+            grid-template-columns: auto 1fr auto auto;
+            gap: 1.6rem;
+            margin-bottom: 2.6rem;
+        }
+
+        .shopping-cart p{
+            align-self: center;
+        }
+
+        .shopping-cart figure img{
+            width: 7rem;
+            height: 7rem;
+            border-radius: 2rem;
+            object-fit: cover;
+        }
+
+        .shopping-cart p:nth-child(2){
+            color: var(--very-light-pink);
+        }
+
+        .shopping-cart p:nth-child(3){
+            font-size: var(--md);
+            font-weight: bold;
+        }
+
+
+        @media (max-width:640px){
+            .product-detail{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <aside class="product-detail">
+        <section class="my-order-content">
+            <figure class="title-container">
+                <img src="./assets/icons/flechita.svg" alt="Flecha">
+                <p class="title">Shopping Cart</p>
+            </figure>
+            <section class="shopping-cart">
+                
+                <figure>
+                    <img loading="lazy" src="https://acortar.link/npSZcd" alt="Imagen del producto">
+                </figure>
+                <p>CupCakes</p>
+                <p>$120.000</p>
+                
+            </section>
+            
+            <section class="shopping-cart">
+                
+                <figure>
+                    <img loading="lazy" src="https://acortar.link/Xs0gqi" alt="Imagen del producto">
+                </figure>
+                <p>Pastel de Chocolate</p>
+                <p>$120.000</p>
+                
+            </section>
+            
+            <section class="shopping-cart">
+                
+                <figure>
+                    <img loading="lazy" src="https://acortar.link/0qvzjz" alt="Imagen del producto">
+                </figure>
+                <p>PanCakes</p>
+                <p>$120.000</p>
+                
+            </section>
+            
+            <section class="shopping-cart">
+                
+                <figure>
+                    <img loading="lazy" src="https://acortar.link/TTemcO" alt="Imagen del producto">
+                </figure>
+                <p>Pastel de Chocolate</p>
+                <p>$120.000</p>
+                
+            </section>
+            <section class="order">
+                <p>
+                    <span>TOTAL</span>
+                </p>
+                <p>
+                    <span>$560.000</span>
+                </p>
+            </section>
+            <button class="primary-button">
+                Checkout
+            </button>
+        </section>
+        
+    </aside>
+</body>
+
+</html>

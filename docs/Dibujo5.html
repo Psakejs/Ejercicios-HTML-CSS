@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cielo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+
+        body {
+            background-color: #bddde0;
+            background-image: radial-gradient(circle, rgba(247, 242, 0, 0.5) 1px, transparent 1px);
+            background-size: 20px 20px;
+            animation: fondoCielo 30s infinite alternate;
+        }
+
+        @keyframes fondoCielo {
+            0% {
+                background-color: #bddde0;
+                /* Cielo claro */
+            }
+
+            50%{
+                background:radial-gradient(circle, rgb(245, 218, 169), #bddde0);
+            }
+
+            100% {
+                background-color: #151618;
+                /* Atardecer o noche */
+            }
+        }
+
+        main {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+
+        @keyframes moverNube {
+            0% {
+                transform: translateX(-30rem);
+            }
+
+            100% {
+                transform: translateX(30rem);
+            }
+        }
+
+        .nube,
+        .nube1,
+        .nube2 {
+            animation: moverNube 30s linear infinite;
+        }
+
+        .nube {
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .sol {
+            width: 25rem;
+            height: 25rem;
+            position: relative;
+            background: radial-gradient(circle, #FFD700 60%, transparent 70%);
+            border-radius: 50%;
+            box-shadow: 0 0 50px #FFD700;
+            animation: respirarSol 3s ease-in-out infinite;
+        }
+
+        .sol::before {
+            content: '';
+            position: absolute;
+            width: 35rem;
+            height: 35rem;
+            background: radial-gradient(circle, transparent 75%, rgba(255, 215, 0, 0.5) 100%);
+            border-radius: 50%;
+            top: -5rem;
+            left: -5rem;
+        }
+
+        @keyframes respirarSol {
+            0% {
+                box-shadow: 0 0 50px #FFD700, 0 0 100px rgba(255, 215, 0, 0.7);
+            }
+
+            50% {
+                box-shadow: 0 0 70px #FFD700, 0 0 150px rgba(255, 215, 0, 0.9);
+            }
+
+            100% {
+                box-shadow: 0 0 50px #FFD700, 0 0 100px rgba(255, 215, 0, 0.7);
+            }
+        }
+
+
+        .nube {
+            width: 36rem;
+            height: 10rem;
+            background-color: white;
+            border-radius: 35rem;
+            margin-bottom: 15rem;
+            position: relative;
+        }
+
+        .nube1 {
+            width: 36rem;
+            height: 10rem;
+            background-color: white;
+            border-radius: 35rem;
+            margin-bottom: 15rem;
+            position: relative;
+            top: -17rem;
+        }
+
+        .nube2 {
+            width: 36rem;
+            height: 10rem;
+            background-color: white;
+            border-radius: 35rem;
+            margin-bottom: 15rem;
+            position: relative;
+        }
+
+
+
+        .nubes {
+            width: inherit;
+            height: 36rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .pompa1 {
+            background-color: rgb(255, 255, 255);
+            width: 13.7rem;
+            height: 13.7rem;
+            border-radius: 50%;
+            position: absolute;
+            top: -3.7rem;
+            left: 0;
+        }
+
+        .pompa2 {
+            background-color: rgb(255, 255, 255);
+            width: 13.7rem;
+            height: 13.7rem;
+            border-radius: 50%;
+            position: absolute;
+            top: -7rem;
+            left: 10rem;
+        }
+
+        .pompa3 {
+            background-color: rgb(255, 255, 255);
+            width: 14.7rem;
+            height: 14.7rem;
+            border-radius: 50%;
+            position: absolute;
+            top: -10rem;
+            left: 20.7rem;
+        }
+
+        @keyframes moverPompas {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-2rem);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .pompa1,
+        .pompa2,
+        .pompa3 {
+            animation: moverPompas 10s ease-in-out infinite;
+        }
+
+
+
+        @media (max-width:600px) {
+
+            .nube2,
+            .nube {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h1 style="color: red;">Buenas noches, que descanses mucho 💕</h1>
+        <section>
+            <img class="sol" src="./Sun_29.webp" alt="El sol">
+        </section>
+        <section class="nubes">
+            <section class="nube">
+                <section class="pompa1"></section>
+                <section class="pompa2"></section>
+                <section class="pompa3"></section>
+            </section>
+
+            <section class="nube1">
+                <section class="pompa1"></section>
+                <section class="pompa2"></section>
+                <section class="pompa3"></section>
+            </section>
+
+            <section class="nube2">
+                <section class="pompa1"></section>
+                <section class="pompa2"></section>
+                <section class="pompa3"></section>
+            </section>
+        </section>
+    </main>
+</body>
+
+</html>

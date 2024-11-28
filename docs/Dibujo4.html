@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corazón</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+
+        .message:focus,
+        .message:active,
+        #texto-mensaje:focus,
+        #texto-mensaje:active {
+            outline: none;
+        }
+
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            background-color: #ee2a53;
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            place-content: center;
+            background: linear-gradient(45deg, #f3c0cd, #f79d9d, #ff6a95, #ff9f9f);
+            background-size: 400% 400%;
+            animation: gradient 8s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+
+        .container {
+            padding: 5rem;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            flex-direction: column;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.6rem;
+        }
+
+        .parrafo {
+            margin: 1rem;
+            width: 26rem;
+            height: 15rem;
+            text-wrap: wrap;
+            padding: 1rem;
+            text-align: center;
+            font-size: 1.3rem;
+        }
+
+        .corazon {
+            background-color: #ee2a53;
+            transition: transform 0.3s ease;
+            width: 20rem;
+            height: 20rem;
+            transform: rotate(45deg);
+            cursor: pointer;
+            animation: latido 2.3s ease-in-out infinite;
+            box-shadow: 0 0 20px 5px rgba(238, 42, 83, 0.6), rgba(238, 42, 83, 0.3) 0px 4px 2px;
+        }
+
+        @keyframes latido {
+            0% {
+                transform: rotate(45deg) scale(1);
+            }
+
+            50% {
+                transform: rotate(45deg) scale(1.1);
+            }
+
+            100% {
+                transform: rotate(45deg) scale(1);
+            }
+        }
+
+
+        .corazon:hover {
+            transform: rotate(45deg) scale(1.1);
+        }
+
+        .right {
+            background-color: #ee2a53;
+            width: 20rem;
+            height: 20rem;
+            border-radius: 50%;
+            position: absolute;
+            top: -10rem;
+            z-index: -2;
+        }
+
+        .left {
+            background-color: #ee2a53;
+            width: 20rem;
+            height: 20rem;
+            border-radius: 50%;
+            position: absolute;
+            top: 0rem;
+            right: 10rem;
+            z-index: -3;
+        }
+
+        .message {
+            background-color: #b4184b;
+            width: 16rem;
+            z-index: 1;
+            text-align: center;
+            border-radius: 2rem;
+            padding: 2rem;
+            transform: rotate(-45deg);
+            box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+            cursor: pointer;
+            position: absolute;
+            top: 1.7rem;
+            left: -1rem;
+            right: 1rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .message:focus {
+    outline: none;
+}
+
+        .message:hover {
+            background-color: #a20242;
+            transform: rotate(-45deg) scale(1.1);
+        }
+
+
+        #texto-mensaje {
+            color: white;
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .message p {
+            color: white;
+            width: 100%;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <section>
+            <h1>💌Que tengas un hermoso día 🤗💌</h1>
+            <p class="parrafo">Espero que este día te traiga sonrisas y momentos hermosos, porque una persona tan
+                especial y valiosa como tú merece lo mejor siempre. 🌼✨ Nunca olvides lo importante que eres para
+                quienes te rodean.</p>
+        </section>
+        <section class="corazon">
+            <section class="left"></section>
+            <article class="message" onclick="cambiarMensaje()" style="visibility: hidden;">
+                <p id="texto-mensaje">Da click aquí 💌</p>
+            </article>
+            <section class="right"></section>
+        </section>
+    </main>
+
+    <script>
+        const mensajes = [
+            "1. Eres un regalo para este mundo, nunca lo olvides. 💖",
+            "2. El mundo es mejor con personas como tú.🌸",
+            "3. Recuerda siempre cuánto vales, eres única. 🌟",
+            "4. No dejes que nadie te haga dudar de lo increíble y valiosa que eres. Sigue brillando. 💎🌟",
+            "5. La vida es más brillante gracias a personas tan especiales como tú. 🌼✨",
+            "Esos fueron todos los mensajes Nata 🤗 que tengas un lindo día, un abrazo."
+        ];
+        let indiceMensaje = -1;
+
+        function cambiarMensaje() {
+            indiceMensaje = (indiceMensaje + 1) % mensajes.length;
+            document.getElementById("texto-mensaje").innerText = mensajes[indiceMensaje];
+        }
+
+        setTimeout(() => {
+            document.querySelector(".message").style.visibility = "visible";
+        }, 500);
+    </script>
+</body>
+
+</html>
