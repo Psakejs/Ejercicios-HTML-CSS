@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pez</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+
+        .water {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            filter: blur(0.5px) brightness(1.1);
+            background: linear-gradient(to bottom, rgb(203, 255, 238), rgb(100, 200, 255));
+            overflow: hidden;
+        }
+
+        
+
+        @keyframes bubble {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-20rem) scale(0.8);
+                opacity: 0;
+            }
+        }
+
+        .burbuja,
+        .burbuja-small {
+            animation: bubble 4s infinite;
+            animation-delay: calc(-1s * var(--i, 0));
+            box-shadow: 0 0 1rem rgba(255, 255, 255, 0.7);
+        }
+
+        @keyframes swim {
+
+            0%,
+            100% {
+                transform: rotate(75deg);
+            }
+
+            50% {
+                transform: rotate(85deg);
+            }
+        }
+
+        .aleta-trasera {
+            animation: swim 1s infinite;
+        }
+
+
+
+        .burbuja {
+            position: absolute;
+            width: 10rem;
+            height: 10rem;
+            border-radius: 50%;
+            border: 1rem solid white;
+            top: 1rem;
+            left: 30rem;
+        }
+
+        .burbuja1 {
+            top: 5rem;
+            left: 60rem;
+        }
+
+        .burbuja2 {
+            top: 30rem;
+            left: 10rem;
+        }
+
+        .burbuja3 {
+            top: 10rem;
+            left: 10rem;
+        }
+
+        .burbuja4 {
+            top: 40rem;
+            left: 90rem;
+        }
+
+        .burbuja5 {
+            left: 80rem;
+        }
+
+        .burbuja-small {
+            border: .6rem solid white;
+            width: 5rem;
+            height: 5rem;
+        }
+
+        @keyframes swim1 {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-1rem) rotate(-2deg);
+            }
+        }
+
+        .fish {
+            width: 26rem;
+            height: 14rem;
+            background: linear-gradient(135deg, coral, orange);
+            border-radius: 60%;
+            position: relative;
+            z-index: 20;
+            box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+            animation: swim1 3s infinite ease-in-out;
+        }
+
+        .fish:hover {
+            background: linear-gradient(135deg, coral, yellow);
+            cursor: pointer;
+        }
+
+
+
+        .eye {
+            position: absolute;
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            background-color: white;
+            top: 2rem;
+            left: 20.7rem;
+            z-index: 22;
+            box-shadow: inset 0 0 0.5rem rgba(0, 0, 0, 0.5);
+        }
+        
+
+        .pupil {
+            position: absolute;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            background: radial-gradient(circle, black 60%, gray 90%);
+            padding: 1rem;
+            top: 1rem;
+            left: 1rem;
+        }
+
+        .white-part {
+            position: absolute;
+            width: 1.5rem;
+            height: 1.5rem;
+            border-radius: 50%;
+            background-color: white;
+        }
+
+        .smile {
+            position: absolute;
+            border-left: .2rem solid black;
+            width: 3rem;
+            height: 3rem;
+            border-radius: 70%;
+            top: 6rem;
+            left: 22.5rem;
+            z-index: 23;
+            transform: rotate(265deg);
+        }
+
+        .aleta {
+            position: absolute;
+            width: 6rem;
+            height: 8.9rem;
+            clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+            border-radius: 7rem;
+            top: -6rem;
+            left: 10rem;
+            z-index: 10;
+        }
+
+        .aleta-cuerpo {
+            position: absolute;
+            width: 5rem;
+            height: 5rem;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            border-radius: 20rem;
+            transform: rotate(80deg);
+            top: 5rem;
+            right: 11.8rem;
+            z-index: 27;
+        }
+
+        .aleta-trasera {
+            position: absolute;
+            width: 10rem;
+            height: 10rem;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            border-radius: 10rem;
+            transform: rotate(80deg);
+            top: 3rem;
+            right: 22rem;
+            z-index: 9;
+        }
+
+        .aleta, .aleta-cuerpo, .aleta-trasera {
+    background: linear-gradient(rgb(245, 205, 132), rgb(243, 101, 65));
+}
+
+
+    </style>
+</head>
+
+<body>
+    <main class="container">
+        <section class="water">
+            <div class="burbuja" style="--i: 1;"></div>
+            <div class="burbuja burbuja-small" style="--i: 2;"></div>
+            <div class="burbuja" style="--i: 3;"></div>
+            <div class="burbuja burbuja1 burbuja-small" style="--i: 4;"></div>
+            <div class="burbuja burbuja2"></div>
+            <div class="burbuja burbuja3 burbuja-small"></div>
+            <div class="burbuja burbuja4"></div>
+            <div class="burbuja burbuja5 burbuja-small"></div>
+            <section class="fish">
+                <article class="fish">
+
+                </article>
+                <article class="eye">
+                    <div class="pupil">
+                        <div class="white-part"></div>
+                    </div>
+                </article>
+
+                <article class="smile">
+
+                </article>
+
+                <article class="aleta">
+
+                </article>
+
+                <article class="aleta-cuerpo">
+
+                </article>
+
+                <article class="aleta-trasera">
+
+                </article>
+            </section>
+        </section>
+    </main>
+</body>
+
+</html>
